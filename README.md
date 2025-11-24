@@ -9,15 +9,32 @@ what failed, and how to run the working components.
 
 ## What We Tried
 
--   Quaternion modification
--   Position modification
--   Multiple 3D Gaussian Splatting configurations
--   Scaling factor adjustments
--   Fusion of left/right eye videos
--   Addition of an eye‑tracking circle overlay (with color editing)
--   Data processing workflows
--   Code configuration
--   VR headset configuration
+- *Quaternion modification*  
+  We tried changing the quaternions coming from the VR headset to make the gaze direction match the 3D Gaussian Splatting scene. We tested normalization, axis changes, and rotation adjustments. Some attempts worked, but the orientation was not always stable over time.
+
+- *Position modification*  
+  We tested different ways to convert the eye or head position into the GS coordinate system. This included simple translations, full transformation matrices, and filters to reduce shaking. The results were acceptable, but small errors remained without proper calibration.
+
+- *Multiple 3D Gaussian Splatting configurations*  
+  We tried several GS setups: standard, optimized, and versions with different density or resolution. Some worked smoothly with VR tracking, while others created delay or visual problems.
+
+- *Scaling factor adjustments*  
+  We adjusted scaling factors to match GS units (meters or millimeters) with VR units. Correct scaling was important to avoid deformation, wrong zoom levels, or depth issues.
+
+- *Fusion of left/right eye videos*  
+  We tested ways to combine the left and right eye video streams to get a single gaze point. We tried averaging, choosing the dominant eye, and interpolating between both. The results depended on the quality and timing accuracy of the input videos.
+
+- *Eye-tracking circle overlay (with color options)*  
+  We added an on-screen circle to show where the user is looking. We also allowed color, size, and transparency changes. This helped us check how well the tracking matched the rendered scene.
+
+- *Data processing workflows*  
+  We created different workflows to synchronize eye-tracking logs, video frames, and 3D transforms. This included cleaning logs, aligning timestamps, and formatting data for the GS renderer. Each version improved timing and reduced sync problems.
+
+- *Code configuration*  
+  We explored several code structures: modular files, single scripts, direct GS integration, and helper tools for transformations. The goal was to make the code easier to maintain and adapt.
+
+- *VR headset configuration*  
+  We tested different headset settings: eye-tracking calibration, tracking resets, IPD changes, distortion settings, and high-frequency capture modes. Some settings improved accuracy, while others caused timing or position issues.
 
 ## What Did Not Work (and Why)
 
