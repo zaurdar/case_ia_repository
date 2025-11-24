@@ -10,31 +10,28 @@ what failed, and how to run the working components.
 ## What We Tried
 
 - *Quaternion modification*  
-  We tried changing the quaternions coming from the VR headset to make the gaze direction match the 3D Gaussian Splatting scene. We tested normalization, axis changes, and rotation adjustments. Some attempts worked, but the orientation was not always stable over time.
+  We tried changing the quaternions coming from the VR headset to make the gaze direction match the 3D Gaussian Splatting scene but the command did not work. 
 
 - *Position modification*  
-  We tested different ways to convert the eye or head position into the GS coordinate system. This included simple translations, full transformation matrices, and filters to reduce shaking. The results were acceptable, but small errors remained without proper calibration.
+  We changed the initial position. The command worked properly. 
 
 - *Multiple 3D Gaussian Splatting configurations*  
-  We tried several GS setups: standard, optimized, and versions with different density or resolution. Some worked smoothly with VR tracking, while others created delay or visual problems.
+  We tried 2 differents 3D Gaussian Splatting (bicycle and table with objects) 
 
 - *Scaling factor adjustments*  
-  We adjusted scaling factors to match GS units (meters or millimeters) with VR units. Correct scaling was important to avoid deformation, wrong zoom levels, or depth issues.
+  We adjusted scaling factors to match VR units with real life mouvement. The command worked properly.
 
 - *Fusion of left/right eye videos*  
-  We tested ways to combine the left and right eye video streams to get a single gaze point. We tried averaging, choosing the dominant eye, and interpolating between both. The results depended on the quality and timing accuracy of the input videos.
-
+  Using the code proposed on the github XXX, we are able to generate a single video with the output videos (left and right eye).
+  
 - *Eye-tracking circle overlay (with color options)*  
-  We added an on-screen circle to show where the user is looking. We also allowed color, size, and transparency changes. This helped us check how well the tracking matched the rendered scene.
+  We added an on-screen circle to show where the user is looking. We also allowed color, size, and transparency changes. This helped us check how well the tracking matched the rendered scene. 
 
 - *Data processing workflows*  
-  We created different workflows to synchronize eye-tracking logs, video frames, and 3D transforms. This included cleaning logs, aligning timestamps, and formatting data for the GS renderer. Each version improved timing and reduced sync problems.
-
-- *Code configuration*  
-  We explored several code structures: modular files, single scripts, direct GS integration, and helper tools for transformations. The goal was to make the code easier to maintain and adapt.
+  Using the code given in the github XXX modified by ourself, we were able to process the data which is the output of the software. This processing allow us to add the circle at the right position.
 
 - *VR headset configuration*  
-  We tested different headset settings: eye-tracking calibration, tracking resets, IPD changes, distortion settings, and high-frequency capture modes. Some settings improved accuracy, while others caused timing or position issues.
+  We set up the position captors, the HTC-vive, the joysticks and the software proposed in the github XXX. 
 
 ## What Did Not Work (and Why)
 
