@@ -47,10 +47,10 @@ what failed, and how to run the working components.
 7.  Execute the following command:
 
 ```{=html}
-```
+
     C:\Users\Creactif\Documents\GaussianSplattinq\EyeNavGS_Software\EyeNavGS_Software\install\bin>
     SIBR_gaussianViewer_app_d.exe -m ../../../../bicycle/bicycle --rendering-mode 2
-
+```
 8.  Optional initial position override:
 
 ```{=html}
