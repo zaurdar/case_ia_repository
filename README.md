@@ -1,6 +1,8 @@
 # Rapport de projet case IA #
 # Gaussian Splatting / Eye Tracking -- README
 
+Ref git ([1]) : https://github.com/symmru/EyeNavGS_Software/tree/sibr_gaussian_VR_viewer
+
 ## Overview
 
 This project explores the integration of 3D Gaussian Splatting with
@@ -22,16 +24,16 @@ what failed, and how to run the working components.
   We adjusted scaling factors to match VR units with real life mouvement. The command worked properly.
 
 - *Fusion of left/right eye videos*  
-  Using the code proposed on the github XXX, we are able to generate a single video with the output videos (left and right eye).
+  Using the code proposed on the github [1] , we are able to generate a single video with the output videos (left and right eye).
   
 - *Eye-tracking circle overlay (with color options)*  
   We added an on-screen circle to show where the user is looking. We also allowed color, size, and transparency changes. This helped us check how well the tracking matched the rendered scene. 
 
 - *Data processing workflows*  
-  Using the code given in the github XXX modified by ourself, we were able to process the data which is the output of the software. This processing allow us to add the circle at the right position.
+  Using the code given in the github [1] modified by ourself, we were able to process the data which is the output of the software. This processing allow us to add the circle at the right position.
 
 - *VR headset configuration*  
-  We set up the position captors, the HTC-vive, the joysticks and the software proposed in the github XXX. 
+  We set up the position captors, the HTC-vive, the joysticks and the software proposed in the github [1]. 
 
 ## What Did Not Work (and Why)
 
