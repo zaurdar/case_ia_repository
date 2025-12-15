@@ -1,0 +1,6 @@
+matplotlib-inline==0.2.1
+numpy==2.3.4
+opencv-python==4.12.0.88
+ffmpeg==1.4
+matplotlib==3.10.7
+ultralytics==3.4.4
