@@ -38,23 +38,24 @@ Once the video has been generated, its resolution must be adapted in order to be
 
 The video can be resized using the following ffmpeg command:
 
-bash
-Copier le code
+```bash
 ffmpeg -i "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\user101_bicycleright.mp4" \
 -vf "scale=2740:2468:flags=lanczos" \
 -c:v libx264 -crf 18 -preset medium -c:a copy \
 "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\user101_bicycleright_scaled.mp4"
+```
 Data Merging and Preprocessing
 Once both the rescaled video and the corresponding CSV file are available, the actual data processing can begin.
 
 After installing the dependencies listed in requirements.txt, the script add_gaze.py can be executed using the following command:
 
-bash
+```bash
 Copier le code
 python add_gaze.py \
   --csv "csv_path" \
   --right "right_path" \
   --left "left_path"
+```
 This script generates:
 
 a merged video containing the gaze overlay
@@ -95,12 +96,12 @@ To download the generated video, it must be converted into a standard, browser-r
 
 This can be done using the following ffmpeg command:
 
-bash
-Copier le code
+```bash
 ffmpeg -y \
 -i "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\output_.avi" \
 -c:v libx264 -preset medium -crf 20 \
 -pix_fmt yuv420p -movflags +faststart -an \
 "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\converted_.mp4"
+```
 Summary
 This pipeline enables the processing and analysis of eye-tracking saliency data within Gaussian Splatting environments, using both fixation-based metrics and object-aware saliency analysis. The resulting outputs provide quantitative and visual insights into gaze behavior relative to scene content.
