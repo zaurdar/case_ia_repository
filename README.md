@@ -73,7 +73,7 @@ The first approach focuses on identifying gaze fixation points and transitions i
 To perform this analysis, execute the notebook fixation_id.ipynb, making sure to update the file paths accordingly.
 
 If the execution is successful, a visualization similar to the expected output should be obtained.
-
+![fixation point](images/output.png)
 ### Object-Aware Saliency Analysis (YOLO)
 The second analysis method is implemented in the notebook EyeGAS_yolo.ipynb.
 
@@ -86,12 +86,13 @@ Upload the merged video and the corresponding CSV file to Colab
 Execute the notebook cells sequentially
 
 At the end of the process, several outputs can be analyzed, such as:
+![video with saliency map](images/saliency.png)
 
 the percentage of time the subject looks at a bicycle when it appears on screen
 
 a video combining a YOLO object detector and a saliency generation model
 
-Video Export
+### Video Export
 To download the generated video, it must be converted into a standard, browser-readable format.
 
 This can be done using the following ffmpeg command:
