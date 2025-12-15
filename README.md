@@ -33,7 +33,7 @@ SIBR_gaussianViewer_app_d.exe \
   --rendering-mode 4 \
   --rendering-size <width> <height>
 ```
-Video Rescaling
+### Video Rescaling
 Once the video has been generated, its resolution must be adapted in order to be compatible with the data processing code.
 
 The video can be resized using the following ffmpeg command:
@@ -44,7 +44,7 @@ ffmpeg -i "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\Add
 -c:v libx264 -crf 18 -preset medium -c:a copy \
 "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\user101_bicycleright_scaled.mp4"
 ```
-Data Merging and Preprocessing
+## Video Merging and Preprocessing
 Once both the rescaled video and the corresponding CSV file are available, the actual data processing can begin.
 
 After installing the dependencies listed in requirements.txt, the script add_gaze.py can be executed using the following command:
@@ -64,17 +64,17 @@ a file named dataset.txt containing all eye-tracking data
 
 These outputs are used in the subsequent processing steps.
 
-Data Analysis Methods
+## Data Analysis Methods
 This repository provides two different data analysis approaches.
 
-Fixation Point Identification
+### Fixation Point Identification
 The first approach focuses on identifying gaze fixation points and transitions in gaze dynamics.
 
 To perform this analysis, execute the notebook fixation_id.ipynb, making sure to update the file paths accordingly.
 
 If the execution is successful, a visualization similar to the expected output should be obtained.
 
-Object-Aware Saliency Analysis (YOLO)
+### Object-Aware Saliency Analysis (YOLO)
 The second analysis method is implemented in the notebook EyeGAS_yolo.ipynb.
 
 To simplify model loading and dependency management, it is strongly recommended to run this notebook using Google Colab.
@@ -103,5 +103,5 @@ ffmpeg -y \
 -pix_fmt yuv420p -movflags +faststart -an \
 "C:\Users\hugom\OneDrive\Documents\CASE_IA\EyeNavGS_Software\utils\AddEyeGazeTracking\converted_.mp4"
 ```
-Summary
+## Summary
 This pipeline enables the processing and analysis of eye-tracking saliency data within Gaussian Splatting environments, using both fixation-based metrics and object-aware saliency analysis. The resulting outputs provide quantitative and visual insights into gaze behavior relative to scene content.
