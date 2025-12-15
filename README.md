@@ -32,7 +32,7 @@ SIBR_gaussianViewer_app_d.exe \
   -in <trace_file.csv> \
   --rendering-mode 4 \
   --rendering-size <width> <height>
-'''
+```
 Video Rescaling
 Once the video has been generated, its resolution must be adapted in order to be compatible with the data processing code.
 
